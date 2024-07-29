@@ -4,6 +4,7 @@
 #include "quantum.h"
 #include "wireless.h"
 #include "usb_main.h"
+#include "lowpower.h"
 
 #ifndef LPWR_TIMEOUT
 #    define LPWR_TIMEOUT 300000 // 5min
