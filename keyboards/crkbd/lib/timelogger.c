@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "timer.h"
 
+#error timelogger was included in build.
+
 char timelog_str[24] = {};
 int last_time = 0;
 int elapsed_time = 0;

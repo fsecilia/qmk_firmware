@@ -2,6 +2,8 @@
 #include <stdint.h>
 #include "action.h"
 
+#error keylogger was included in build.
+
 char keylog_str[24] = {};
 char keylogs_str[21] = {};
 int keylogs_str_idx = 0;
