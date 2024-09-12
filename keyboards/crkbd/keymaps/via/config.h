@@ -52,13 +52,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define HOLD_ON_OTHER_KEY_PRESS
 #define ENABLE_COMPILE_KEYCODE
 
+#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
+
 #define DEBOUNCE 10
 
 #define NO_MUSIC_MODE
 #undef LOCKING_SUPPORT_ENABLE
 #undef LOCKING_RESYNC_ENABLE
 
-#ifndef RGB_MATRIX_ENABLE
+#ifdef RGB_MATRIX_ENABLE
     #define RGB_MATRIX_KEYPRESSES // reacts to keypresses
     // #define RGB_MATRIX_SLEEP // turn off effects when suspended
     #define RGB_MATRIX_MAXIMUM_BRIGHTNESS 150 // limits maximum brightness of LEDs to 150 out of 255. Higher may cause the controller to crash.

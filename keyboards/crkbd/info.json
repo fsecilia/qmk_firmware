@@ -5,8 +5,8 @@
     "maintainer": "qmk",
     "usb": {
         "vid": "0x4653",
-        "pid": "0x0001",
-        "device_version": "0.0.1"
+        "pid": "0x0002",
+        "device_version": "0.0.2"
     },
     "rgb_matrix": {
         "driver": "ws2812"
