@@ -43,6 +43,8 @@
 #define HOLD_ON_OTHER_KEY_PRESS
 #define ENABLE_COMPILE_KEYCODE
 
+#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
+
 // The way these change behavior is too different to only use on the crkbd. I'll enable this once I can flash the q9.
 // #define ONESHOT_TAP_TOGGLE 5
 // #define ONESHOT_TIMEOUT 5000
