@@ -32,3 +32,54 @@
 
 /* Old default behavior of mod-taps */
 #define HOLD_ON_OTHER_KEY_PRESS
+
+
+
+
+// #define DYNAMIC_KEYMAP_LAYER_COUNT 6
+#define LAYER_STATE_8BIT
+
+#define PERMISSIVE_HOLD
+#define HOLD_ON_OTHER_KEY_PRESS
+#define ENABLE_COMPILE_KEYCODE
+
+// The way these change behavior is too different to only use on the crkbd. I'll enable this once I can flash the q9.
+// #define ONESHOT_TAP_TOGGLE 5
+// #define ONESHOT_TIMEOUT 5000
+
+#define DEBOUNCE 10
+
+#define NO_MUSIC_MODE
+#undef LOCKING_SUPPORT_ENABLE
+#undef LOCKING_RESYNC_ENABLE
+
+#ifndef RGB_MATRIX_ENABLE
+    #define RGB_MATRIX_KEYPRESSES // reacts to keypresses
+    // #define RGB_MATRIX_SLEEP // turn off effects when suspended
+    #define RGB_MATRIX_MAXIMUM_BRIGHTNESS 150 // limits maximum brightness of LEDs to 150 out of 255. Higher may cause the controller to crash.
+    #define RGB_MATRIX_HUE_STEP 8
+    #define RGB_MATRIX_SAT_STEP 8
+    #define RGB_MATRIX_VAL_STEP 8
+    #define RGB_MATRIX_SPD_STEP 10
+    #define RGBLIGHT_DISABLE_KEYCODES
+
+    #define RGB_MATRIX_FRAMEBUFFER_EFFECTS
+    #define ENABLE_RGB_MATRIX_ALPHAS_MODS
+    #define ENABLE_RGB_MATRIX_GRADIENT_UP_DOWN
+    #define ENABLE_RGB_MATRIX_GRADIENT_LEFT_RIGHT
+    #define ENABLE_RGB_MATRIX_BREATHING
+    #define ENABLE_RGB_MATRIX_BAND_SAT
+    #define ENABLE_RGB_MATRIX_BAND_VAL
+    #define ENABLE_RGB_MATRIX_BAND_SPIRAL_SAT
+    #define ENABLE_RGB_MATRIX_BAND_SPIRAL_VAL
+    #define ENABLE_RGB_MATRIX_CYCLE_ALL
+    #define ENABLE_RGB_MATRIX_RAINBOW_MOVING_CHEVRON
+    #define ENABLE_RGB_MATRIX_CYCLE_SPIRAL
+    #define ENABLE_RGB_MATRIX_RAINDROPS
+    #define ENABLE_RGB_MATRIX_HUE_BREATHING
+    #define ENABLE_RGB_MATRIX_PIXEL_FRACTAL
+
+    #define ENABLE_RGB_MATRIX_TYPING_HEATMAP
+    #define ENABLE_RGB_MATRIX_SOLID_REACTIVE_MULTINEXUS
+    #define ENABLE_RGB_MATRIX_MULTISPLASH
+#endif

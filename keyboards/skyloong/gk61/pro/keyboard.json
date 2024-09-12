@@ -12,16 +12,21 @@
     },
     "features": {
         "bootmagic": true,
-        "command": true,
+        "caps_word": true,
+        "command": false,
         "console": false,
-        "encoder": true,
+        "encoder": false,
         "extrakey": true,
-        "mousekey": true,
+        "mousekey": false,
         "nkro": true,
+        "repeat_key": true,
         "rgb_matrix": true
     },
     "build": {
-        "debounce_type": "asym_eager_defer_pk"
+        "debounce_type": "sym_eager_pk"
+    },
+    "dynamic_keymap": {
+        "layer_count": 6
     },
     "matrix_pins": {
         "cols": ["B11", "C6", "C7", "B12", "B13", "B14", "B15", "B10", "B1", "B0", "D2", "B3", "B4", "B5"],
