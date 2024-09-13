@@ -1,5 +1,15 @@
 {
     "features": {
+        "bootmagic": true,
+        "caps_word": true,
+        "command": false,
+        "console": false,
+        "extrakey": true,
+        "key_lock": true,
+        "mousekey": true,
+        "nkro": true,
+        "repeat_key": true,
+        "rgblight": false,
         "rgb_matrix": true
     },
     "split": {
@@ -15,21 +25,17 @@
             "enabled": true
         }
     },
+    "build": {
+        "debounce_type": "sym_eager_pk",
+        "lto": true
+    },
+    "debounce": 10,
+    "dynamic_keymap": {
+        "layer_count": 6
+    },
     "rgblight": {
         "led_count": 54,
-        "split_count": [27, 27],
-        "animations": {
-            "breathing": true,
-            "rainbow_mood": true,
-            "rainbow_swirl": true,
-            "snake": true,
-            "knight": true,
-            "christmas": true,
-            "static_gradient": true,
-            "rgb_test": true,
-            "alternating": true,
-            "twinkle": true
-        }
+        "split_count": [27, 27]
     },
     "ws2812": {
         "pin": "D3"
@@ -142,20 +148,7 @@
     },
     "rgb_matrix": {
         "animations": {
-            "alphas_mods": true,
-            "gradient_up_down": true,
-            "gradient_left_right": true,
-            "breathing": true,
-            "band_sat": true,
-            "band_val": true,
-            "band_spiral_sat": true,
-            "band_spiral_val": true,
-            "cycle_all": true,
-            "rainbow_moving_chevron": true,
-            "cycle_spiral": true,
-            "raindrops": true,
-            "hue_breathing": true,
-            "pixel_fractal": true
+            "solid_reactive_multinexus": true
         },
         "split_count": [27, 27],
         "layout": [

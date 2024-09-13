@@ -1,6 +1,6 @@
 {
     "features": {
-        "rgblight": true
+        "rgblight": false
     },
     "split": {
         "serial": {
