@@ -1,17 +1,4 @@
 {
-    "features": {
-        "bootmagic": true,
-        "caps_word": true,
-        "command": false,
-        "console": false,
-        "extrakey": true,
-        "key_lock": true,
-        "mousekey": true,
-        "nkro": true,
-        "repeat_key": true,
-        "rgblight": false,
-        "rgb_matrix": true
-    },
     "split": {
         "serial": {
             "pin": "D2"
@@ -24,14 +11,6 @@
         "usb_detect": {
             "enabled": true
         }
-    },
-    "build": {
-        "debounce_type": "sym_eager_pk",
-        "lto": true
-    },
-    "debounce": 10,
-    "dynamic_keymap": {
-        "layer_count": 6
     },
     "rgblight": {
         "led_count": 54,
