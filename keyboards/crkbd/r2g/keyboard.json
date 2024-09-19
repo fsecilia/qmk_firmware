@@ -155,7 +155,8 @@
             "cycle_spiral": true,
             "raindrops": true,
             "hue_breathing": true,
-            "pixel_fractal": true
+            "pixel_fractal": true,
+            "solid_reactive_multinexus": true
         },
         "split_count": [27, 27],
         "layout": [
