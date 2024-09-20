@@ -30,5 +30,5 @@
 #define SNLED27351_CURRENT_TUNE \
     { 0xF8, 0xF8, 0x70, 0xF8, 0xF8, 0x70, 0xF8, 0xF8, 0x70, 0xF8, 0xF8, 0x70 }
 
-/* Old default behavior of mod-taps */
-#define HOLD_ON_OTHER_KEY_PRESS
+#define LAYER_STATE_8BIT
+#define ENABLE_COMPILE_KEYCODE
