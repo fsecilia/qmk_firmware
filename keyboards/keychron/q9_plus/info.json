@@ -10,14 +10,35 @@
     },
     "features": {
         "bootmagic": true,
+        "caps_word": true,
         "command": false,
         "console": false,
-        "extrakey": true,
-        "mousekey": true,
         "dip_switch": true,
         "encoder": true,
+        "extrakey": true,
+        "key_lock": true,
+        "mousekey": false,
         "nkro": true,
-        "rgb_matrix": true
+        "oled": false,
+        "repeat_key": true,
+        "rgb_matrix": true,
+        "rgblight": false
+    },
+    "build": {
+        "debounce_type": "sym_eager_pk",
+        "lto": true
+    },
+    "debounce": 10,
+    "dynamic_keymap": {
+        "layer_count": 6
+    },
+    "caps_word": {
+        "double_tap_shift_turns_on": true,
+        "enabled": true
+    },
+    "tapping": {
+        "hold_on_other_key_press": true,
+        "permissive_hold": true
     },
     "eeprom": {
         "wear_leveling": {
@@ -36,9 +57,6 @@
         "rotary": [
             {"pin_a": "B4", "pin_b": "B5"}
         ]
-    },
-    "dynamic_keymap": {
-        "layer_count": 5
     },
     "layouts": {
         "LAYOUT_54_ansi": {
@@ -120,13 +138,20 @@
             "rainbow_beacon": true,
             "jellybean_raindrops": true,
             "pixel_rain": true,
-            "typing_heatmap": true,
             "digital_rain": true,
-            "solid_reactive_simple": true,
-            "solid_reactive_multiwide": true,
+            "multisplash": true,
+            "solid_multisplash": true,
+            "solid_reactive_cross": true,
+            "solid_reactive_multicross": true,
             "solid_reactive_multinexus": true,
+            "solid_reactive_multiwide": true,
+            "solid_reactive_nexus": true,
+            "solid_reactive_simple": true,
+            "solid_reactive_wide": true,
+            "solid_reactive": true,
+            "solid_splash": true,
             "splash": true,
-            "solid_splash": true
+            "typing_heatmap": true
         },
         "sleep": true
     }
