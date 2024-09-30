@@ -35,6 +35,9 @@
         "permissive_hold": true
     },
     "debounce": 10,
+    "dynamic_keymap": {
+        "layer_count": 6
+    },
     "matrix_pins": {
         "cols": ["C9", "C8", "C7", "A8", "C6", "B14", "B13", "B12", "C1", "C2", "A10", "C3", "A6", "C4", "C5"],
         "rows": ["A1", "A2", "A3", "A4", "C13"]
@@ -45,9 +48,6 @@
             "backing_size": 4096,
             "driver": "spi_flash"
         }
-    },
-    "dynamic_keymap": {
-        "layer_count": 6
     },
     "processor": "WB32FQ95",
     "indicators": {
