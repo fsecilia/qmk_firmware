@@ -1,1 +1,2 @@
 AUDIO_SUPPORTED = no
+SRC += air40.c
