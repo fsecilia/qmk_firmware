@@ -17,7 +17,7 @@
         "console": false,
         "encoder": true,
         "extrakey": true,
-        "mousekey": false,
+        "mousekey": true,
         "oled": false,
         "repeat_key": true,
         "rgb_matrix": true
