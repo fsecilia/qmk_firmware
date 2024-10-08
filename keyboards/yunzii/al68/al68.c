@@ -12,7 +12,6 @@ void keyboard_pre_init_kb(void) {
     gpio_set_pin_output(A8);
     gpio_write_pin_high(A8); // ENABLE USB
     uart_init(460800);
-    wait_ms(400);
 }
 
 bool process_record_kb(uint16_t keycode, keyrecord_t* record) {
@@ -26,4 +25,20 @@ bool process_record_kb(uint16_t keycode, keyrecord_t* record) {
         }
     }
     return process_record_user(keycode, record);
+}
+
+bool encoder_update_kb(uint8_t index, bool clockwise) {
+    if (!encoder_update_user(index, clockwise)) {
+        return false;
+    }
+
+    if (index == 0) {
+        if (clockwise) {
+            tap_code(KC_VOLU);
+        } else {
+            tap_code(KC_VOLD);
+        }
+    }
+
+    return true;
 }
