@@ -16,16 +16,39 @@
 
 #pragma once
 
-/* Key matrix size */
-#define MATRIX_ROWS 6
-#define MATRIX_COLS 20
-
-/* COL2ROW or ROW2COL */
-#define DIODE_DIRECTION ROW2COL
-
 /* RGB Matrix Driver Configuration */
-#define SNLED27351_I2C_ADDRESS_1 SNLED27351_I2C_ADDRESS_VDDIO
-#define SNLED27351_I2C_ADDRESS_2 SNLED27351_I2C_ADDRESS_GND
+#define DRIVER_COUNT 2
+#define DRIVER_ADDR_1 0b1110111
+#define DRIVER_ADDR_2 0b1110100
 
-#define SNLED27351_CURRENT_TUNE \
+#define CKLED2001_CURRENT_TUNE \
     { 0xA4, 0xA4, 0x52, 0xA4, 0xA4, 0x52, 0xA4, 0xA4, 0x52, 0xA4, 0xA4, 0x52 }
+
+/* DIP switch */
+#define DIP_SWITCH_MATRIX_GRID  { {5, 4} }
+
+/* Disable DIP switch in matrix data */
+#define MATRIX_MASKED
+
+/* turn off effects when suspended */
+#define RGB_DISABLE_WHEN_USB_SUSPENDED
+
+/* EEPROM Driver Configuration */
+#define WEAR_LEVELING_LOGICAL_SIZE 2048
+#define WEAR_LEVELING_BACKING_SIZE (WEAR_LEVELING_LOGICAL_SIZE * 2)
+
+// RGB Matrix Animation modes. Explicitly enabled
+// For full list of effects, see:
+// https://docs.qmk.fm/#/feature_rgb_matrix?id=rgb-matrix-effects
+
+#define RGB_MATRIX_FRAMEBUFFER_EFFECTS
+#define RGB_MATRIX_KEYPRESSES
+
+/* HC595 Driver Configuration */
+#define HC595_STCP A0
+#define HC595_SHCP A1
+#define HC595_DS C15
+
+/* Factory test keys */
+#define FN_KEY1 MO(1)
+#define FN_KEY2 MO(3)

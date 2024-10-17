@@ -17,7 +17,17 @@
 #pragma once
 
 /* RGB Matrix Driver Configuration */
-#define SNLED27351_I2C_ADDRESS_1 SNLED27351_I2C_ADDRESS_VDDIO
-#define SNLED27351_I2C_ADDRESS_2 SNLED27351_I2C_ADDRESS_GND
+#define DRIVER_COUNT 2
+#define DRIVER_ADDR_1 0b1110111
+#define DRIVER_ADDR_2 0b1110100
 
-#define SNLED27351_PHASE_CHANNEL SNLED27351_SCAN_PHASE_9_CHANNEL
+/* RGB Matrix Configuration */
+#define RGB_MATRIX_LED_COUNT 61
+
+/* Scan phase of led driver set as MSKPHASE_9CHANNEL(defined as 0x03 in CKLED2001.h) */
+#define PHASE_CHANNEL MSKPHASE_9CHANNEL
+#define CKLED2001_CURRENT_TUNE \
+    { 0xCA, 0xCA, 0x60, 0xCA, 0xCA, 0x60, 0xCA, 0xCA, 0x60, 0xCA, 0xCA, 0x60 }
+
+/* Enable CapsLcok LED*/
+#define CAPS_LOCK_LED_INDEX 28

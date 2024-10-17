@@ -12,19 +12,11 @@
         "bootmagic": true,
         "command": false,
         "console": false,
+        "dip_switch": true,
         "extrakey": true,
         "mousekey": true,
         "nkro": true,
-        "rgb_matrix": true,
-        "dip_switch": true
-    },
-    "eeprom": {
-        "wear_leveling": {
-            "backing_size": 4096
-        }
-    },
-    "dip_switch": {
-        "matrix_grid": [ [5, 4] ]
+        "rgb_matrix": true
     },
     "matrix_pins": {
         "cols": ["C14", "C15", "A0", "A1", "A2", "A3", "A4", "A5", null, null, null, null, null, null, null, null],
@@ -32,9 +24,13 @@
         "custom": true,
         "custom_lite": true
     },
+    "matrix_size": {
+        "cols": 16,
+        "rows": 6
+    },
     "diode_direction": "ROW2COL",
     "rgb_matrix": {
-        "driver": "snled27351",
+        "driver": "ckled2001",
         "animations": {
             "band_spiral_val": true,
             "breathing": true,
@@ -57,7 +53,6 @@
             "solid_reactive_multinexus": true,
             "splash": true,
             "solid_splash": true
-        },
-        "sleep": true
+        }
     }
 }

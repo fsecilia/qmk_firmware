@@ -17,8 +17,26 @@
 #pragma once
 
 /* RGB Matrix Driver Configuration */
-#define IS31FL3733_I2C_ADDRESS_1 IS31FL3733_I2C_ADDRESS_GND_GND
-#define IS31FL3733_I2C_ADDRESS_2 IS31FL3733_I2C_ADDRESS_VCC_VCC
+#define DRIVER_COUNT 2
+#define DRIVER_ADDR_1 0b1010000
+#define DRIVER_ADDR_2 0b1011111
 
-/* Encoder Configuration*/
-#define ENCODER_DEFAULT_POS 0x3
+/* DIP switch */
+#define DIP_SWITCH_MATRIX_GRID  { {0,1} }
+
+/* Disable DIP switch in matrix data */
+#define MATRIX_MASKED
+
+/* Disable RGB lighting when PC is in suspend */
+#define RGB_DISABLE_WHEN_USB_SUSPENDED
+
+// RGB Matrix Animation modes. Explicitly enabled
+// For full list of effects, see:
+// https://docs.qmk.fm/#/feature_rgb_matrix?id=rgb-matrix-effects
+
+#define RGB_MATRIX_FRAMEBUFFER_EFFECTS
+#define RGB_MATRIX_KEYRELEASES
+
+/* Factory test keys */
+#define FN_KEY1 MO(1)
+#define FN_KEY2 MO(3)
