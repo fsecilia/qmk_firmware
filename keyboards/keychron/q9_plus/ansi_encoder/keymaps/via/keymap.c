@@ -22,7 +22,6 @@ enum layers{
     MAC_FN1,
     WIN_FN1,
     FN2,
-    FN3,
 };
 
 #define KC_TASK LGUI(KC_TAB)
@@ -58,12 +57,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TILD, KC_F1,    KC_F2,    KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,   KC_F11,      KC_F12,   KC_BSPC,          _______,
         KC_ESC,  KC_1,     KC_2,     KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,     _______,               _______,          _______,
         _______,           _______,  _______, _______, _______, _______, _______, _______, _______, _______,  _______,               _______, _______,
-        _______, _______,  _______,  _______,          _______,                   _______,          _______,  _______,     _______,  _______, _______, _______),
-
-    [FN3] = LAYOUT_54_ansi(
-        KC_TILD, KC_F1,    KC_F2,    KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,   KC_F11,      KC_F12,   KC_BSPC,          _______,
-        KC_ESC,  KC_1,     KC_2,     KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,     _______,               _______,          _______,
-        _______,           _______,  _______, _______, _______, _______, _______, _______, _______, _______,  _______,               _______, _______,
         _______, _______,  _______,  _______,          _______,                   _______,          _______,  _______,     _______,  _______, _______, _______)
 };
 
@@ -73,7 +66,6 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
     [WIN_BASE] = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
     [MAC_FN1]  = {ENCODER_CCW_CW(RGB_VAD, RGB_VAI)},
     [WIN_FN1]  = {ENCODER_CCW_CW(RGB_VAD, RGB_VAI)},
-    [FN2]      = {ENCODER_CCW_CW(_______, _______)},
-    [FN3]      = {ENCODER_CCW_CW(_______, _______)}
+    [FN2]      = {ENCODER_CCW_CW(_______, _______)}
 };
 #endif

@@ -17,7 +17,14 @@
 #pragma once
 
 /* RGB Matrix Driver Configuration */
-#define SNLED27351_I2C_ADDRESS_1 SNLED27351_I2C_ADDRESS_GND
+#define DRIVER_COUNT 1
+#define DRIVER_ADDR_1 0b1110100
 
-/* Enable CapsLock LED*/
+/* RGB Matrix Configuration */
+#define RGB_MATRIX_LED_COUNT 62
+
+#define CKLED2001_CURRENT_TUNE \
+    { 0xCA, 0xCA, 0x60, 0xCA, 0xCA, 0x60, 0xCA, 0xCA, 0x60, 0xCA, 0xCA, 0x60 }
+
+/* Enable CapsLcok LED*/
 #define CAPS_LOCK_LED_INDEX 27

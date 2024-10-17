@@ -16,6 +16,14 @@
 
 #pragma once
 
+/* RGB Matrix Configuration */
+#define RGB_MATRIX_LED_COUNT 89
+
+/* Encoder Configuration*/
+#ifdef ENCODER_ENABLE
+#    define ENCODER_DEFAULT_POS 0x3
+#endif
+
 /* Enable caps-lock LED */
 #define CAPS_LOCK_LED_INDEX 51
 

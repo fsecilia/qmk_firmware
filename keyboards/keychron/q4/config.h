@@ -16,5 +16,26 @@
 
 #pragma once
 
-#define SNLED27351_CURRENT_TUNE \
-    { 0xCA, 0xCA, 0x60, 0xCA, 0xCA, 0x60, 0xCA, 0xCA, 0x60, 0xCA, 0xCA, 0x60 }
+/* DIP switch */
+#define DIP_SWITCH_MATRIX_GRID  { {4,4} }
+
+/* Disable DIP switch in matrix data */
+#define MATRIX_MASKED
+
+/* turn off effects when suspended */
+#define RGB_DISABLE_WHEN_USB_SUSPENDED
+
+/* EEPROM Driver Configuration */
+#define WEAR_LEVELING_LOGICAL_SIZE 2048
+#define WEAR_LEVELING_BACKING_SIZE (WEAR_LEVELING_LOGICAL_SIZE * 2)
+
+// RGB Matrix Animation modes. Explicitly enabled
+// For full list of effects, see:
+// https://docs.qmk.fm/#/feature_rgb_matrix?id=rgb-matrix-effects
+
+#define RGB_MATRIX_KEYPRESSES
+#define RGB_MATRIX_FRAMEBUFFER_EFFECTS
+
+/* Factory test keys */
+#define FN_KEY1 MO(2)
+#define FN_KEY2 MO(3)

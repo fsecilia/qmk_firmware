@@ -16,11 +16,11 @@
 
 #pragma once
 
-/* We use a pin with a stronger pull resistor than the internal MCU pins */
+/* We uses a pin with a stronger pull resistor than the internal MCU pins */
 // #define MATRIX_UNSELECT_DRIVE_HIGH
 
-#define SNLED27351_CURRENT_TUNE \
-    { 0x9D, 0x9D, 0x44, 0x9D, 0x9D, 0x44, 0x9D, 0x9D, 0x44, 0x9D, 0x9D, 0x44 }
+/* RGB Matrix Configuration */
+#define RGB_MATRIX_LED_COUNT 88
 
 /* Enable caps-lock LED */
 #define CAPS_LOCK_LED_INDEX 49

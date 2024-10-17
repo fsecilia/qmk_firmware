@@ -16,14 +16,8 @@
 
 #pragma once
 
-/* Key matrix pins */
-#define MATRIX_ROW_PINS \
-    { B5, B4, B3, A15, A14, A13 }
-#define MATRIX_COL_PINS \
-    { A10, A9, A8, B1, B0, A7, A6, A5, A4, A3, NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN, NO_PIN }
-#define NO_PIN_START 10
-#define NO_PIN_NUM 10
-#define CLR_REG_VAL 0x3FF
+/* RGB Matrix Configuration */
+#define RGB_MATRIX_LED_COUNT 108
 
 /* Encoder Configuration */
 #define ENCODER_DEFAULT_POS 0x3
@@ -32,4 +26,8 @@
 #define CAPS_LOCK_LED_INDEX 61
 
 /* Enable NUM_LOCK_LED_INDEX */
-// #define NUM_LOCK_LED_INDEX 37
+#define NUM_LOCK_LED_INDEX 37
+
+/* HC595 Driver Configuration */
+#define HC595_START_INDEX 10
+#define HC595_END_INDEX 19
