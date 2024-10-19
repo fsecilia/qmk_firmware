@@ -18,8 +18,8 @@
 
 #ifdef LED_MATRIX_ENABLE
 /* RGB Matrix Driver Configuration */
-#    define DRIVER_COUNT 1
-#    define DRIVER_ADDR_1 0b1110100
+// #    define DRIVER_COUNT 1
+#    define SNLED27351_I2C_ADDRESS_1 0b1110100
 
 /* RGB Matrix Configuration */
 #    define LED_MATRIX_LED_COUNT 81
@@ -31,8 +31,7 @@
 
 /* Scan phase of led driver set as MSKPHASE_6CHANNEL(defined as 0x03 in CKLED2001.h) */
 #    define PHASE_CHANNEL MSKPHASE_6CHANNEL
-#    define CKLED2001_CURRENT_TUNE \
-        { 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60 }
+#    define CKLED2001_CURRENT_TUNE {0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60}
 
 /* turn off effects when suspended */
 #    define LED_DISABLE_WHEN_USB_SUSPENDED
