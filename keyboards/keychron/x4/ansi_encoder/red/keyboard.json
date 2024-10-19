@@ -14,7 +14,7 @@
         ]
     },
     "led_matrix": {
-        "driver": "ckled2001",
+        "driver": "snled27351",
         "animations": {
             "none": true,
             "solid": true,
@@ -31,7 +31,8 @@
             "solid_splash": true,
             "wave_left_right": true,
             "wave_up_down": true,
-            "effect_max": true
+            "effect_max": true,
+            "typing_heatmap": true
         },
         "layout": [
             {"matrix":[0, 0],  "flags":1, "x":0,   "y":0},
