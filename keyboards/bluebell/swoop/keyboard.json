@@ -10,9 +10,33 @@
   },
   "features": {
     "bootmagic": true,
-    "mousekey": true,
+    "caps_word": true,
+    "command": false,
+    "console": false,
+    "encoder": true,
     "extrakey": true,
+    "key_lock": false,
+    "mousekey": false,
+    "nkro": true,
+    "oled": false,
+    "repeat_key": true,
     "rgblight": true
+  },
+  "build": {
+      "debounce_type": "sym_eager_pk",
+      "lto": true
+  },
+  "debounce": 15,
+  "dynamic_keymap": {
+      "layer_count": 7
+  },
+  "caps_word": {
+      "double_tap_shift_turns_on": true,
+      "enabled": true
+  },
+  "tapping": {
+      "hold_on_other_key_press": true,
+      "permissive_hold": true
   },
   "ws2812": {
     "pin": "D3"
@@ -26,7 +50,7 @@
     "animations": {
       "breathing": true,
       "rainbow_mood": true,
-      "rainbow_swirl": true,
+      "typing_heatmap": true,
       "static_gradient": true
     }
   },

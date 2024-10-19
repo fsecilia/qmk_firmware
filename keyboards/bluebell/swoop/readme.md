@@ -25,3 +25,6 @@ Entering the bootloader:
 <!-- * **Bootmagic reset**: Hold down the key at (0,0) in the matrix (usually the top left key or Escape) and plug in the keyboard -->
 * **Physical reset button**: Briefly press the small button on the inner side of the PCB - you may have pads you must short instead
 <!-- * **Keycode in layout**: Press the key mapped to `QK_BOOT` if it is available -->
+
+## Sea Micro
+qmk flash -kb bluebell/swoop -km via -bl dfu
