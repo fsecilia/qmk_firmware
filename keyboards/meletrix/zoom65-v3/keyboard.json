@@ -1,11 +1,11 @@
 {
-    "keyboard_name": "Zoom65 v3",
+    "keyboard_name": "zoom65",
     "manufacturer": "meletrix",
     "url": "https://zoom65.com/",
     "maintainer": "spbgzh",
     "usb": {
-        "vid": "0x36B5",
-        "pid": "0x287F",
+        "vid": "0x806B",
+        "pid": "0x0004",
         "device_version": "0.0.1",
         "force_nkro": true
     },
