@@ -38,32 +38,18 @@
                   "type": "dropdown",
                   "content": ["id_qmk_rgb_matrix_effect", 3, 2],
                   "options": [
-                    "\u5168\u7184All Off",
-                    "\u5355\u8272Solid Color",
-                    "\u4e0a\u4e0b\u6e10\u53d8Gradient Up/Down",
-                    "\u5de6\u53f3\u6e10\u53d8Gradient Left/Right",
-                    "\u547c\u5438Breathing",
-                    "\u9971\u548c\u5ea6\u6761Band Sat.",
-                    "\u4eae\u5ea6\u6761Band Val.",
-                    "\u9971\u548c\u5ea6\u98ce\u8f66Pinwheel Sat.",
-                    "\u4eae\u5ea6\u6761\u98ce\u8f66Pinwheel Val.",
-                    "\u9971\u548c\u5ea6\u87ba\u65cbSpiral Sat.",
-                    "\u4eae\u5ea6\u6761\u87ba\u65cbSpiral Val.",
-                    "\u5168\u5faa\u73afCycle All",
-                    "\u5de6\u53f3\u5faa\u73afCycle Left/Right",
-                    "\u4e0a\u4e0b\u5faa\u73afCycle Up/Down",
-                    "\u5185\u5916\u5faa\u73afCycle Out/In",
-                    "\u5185\u5916\u53cc\u5faa\u73afCycle Out/In Dual",
-                    "\u5f69\u8679Rainbow Moving Chevron",
-                    "\u5faa\u73af\u98ce\u8f66Cycle Pinwheel",
-                    "\u5faa\u73af\u87ba\u65cbCycle Spiral",
-                    "\u53cc\u706f\u5854Dual Beacon",
-                    "\u5f69\u8679\u706f\u5854Rainbow Beacon",
-                    "\u5f69\u8679\u98ce\u8f66Rainbow Pinwheels",
-                    "\u9971\u548c\u5ea6\u547c\u5438Hue Breathing",
-                    "\u9971\u548c\u5ea6\u706f\u6446Hue Pendulum",
-                    "\u9971\u548c\u5ea6\u6ce2\u6d6aHue Wave",
-                    "\u9971\u548c\u5ea6\u6ce2\u6d6bTyping Heatmap"
+                    "All Off",
+                    "Solid Color",
+                    "Band Sat",
+                    "Breathing",
+                    "Cycle All",
+                    "Cycle Left Right",
+                    "Rainbow Moving Chevron",
+                    "Gradient Left Right",
+                    "Hue Breathing",
+                    "Hue Pendulum",
+                    "Hue Wave",
+                    "Typing Heatmap"
                   ]
                 },
                 {
@@ -74,7 +60,6 @@
                   "content": ["id_qmk_rgb_matrix_effect_speed", 3, 3]
                 },
                 {
-                  "showIf": "{id_qmk_rgb_matrix_effect} != 0 && {id_qmk_rgb_matrix_effect} != 24 && {id_qmk_rgb_matrix_effect} != 28 && {id_qmk_rgb_matrix_effect} != 29 && {id_qmk_rgb_matrix_effect} != 32",
                   "label": "Color",
                   "type": "color",
                   "content": ["id_qmk_rgb_matrix_color", 3, 4]
