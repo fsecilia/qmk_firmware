@@ -1,6 +1,6 @@
 {
   "name": "AL68 Keyboard",
-  "vendorId": "0x4D4B",
+  "vendorId": "0x414A",
   "productId": "0x304E",
   "matrix": {"rows": 5, "cols": 15},
 
