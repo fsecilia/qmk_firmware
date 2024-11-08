@@ -26,19 +26,3 @@ bool process_record_kb(uint16_t keycode, keyrecord_t* record) {
     }
     return process_record_user(keycode, record);
 }
-
-bool encoder_update_kb(uint8_t index, bool clockwise) {
-    if (!encoder_update_user(index, clockwise)) {
-        return false;
-    }
-
-    if (index == 0) {
-        if (clockwise) {
-            tap_code(KC_VOLU);
-        } else {
-            tap_code(KC_VOLD);
-        }
-    }
-
-    return true;
-}
