@@ -1,7 +1,7 @@
 {
     "keyboard_name": "Corne",
     "manufacturer": "foostan",
-    "url": "",
+    "url": "https://github.com/foostan/crkbd",
     "maintainer": "qmk",
     "usb": {
         "vid": "0x4653",
@@ -17,13 +17,16 @@
         "command": false,
         "console": false,
         "extrakey": true,
-        "key_lock": true,
+        "key_lock": false,
         "mousekey": false,
-        "nkro": false,
+        "nkro": true,
         "oled": false,
         "repeat_key": true,
         "rgblight": false,
         "rgb_matrix": true
+    },
+    "bootmagic": {
+        "matrix": [0, 1]
     },
     "build": {
         "debounce_type": "sym_eager_pk",
@@ -47,7 +50,10 @@
     },
     "diode_direction": "COL2ROW",
     "split": {
-        "enabled": true
+        "enabled": true,
+        "bootmagic": {
+            "matrix": [4, 1]
+        }
     },
     "processor": "atmega32u4",
     "community_layouts": [ "split_3x5_3", "split_3x6_3" ]
