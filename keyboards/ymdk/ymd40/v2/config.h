@@ -17,3 +17,5 @@
 #pragma once
 
 #define RGB_MATRIX_LED_COUNT 51
+
+#define FORCE_NKRO
