@@ -1,4 +1,4 @@
-/* Copyright (C) 2022 jonylee@hfd
+/* Copyright (C) 2023 jonylee@hfd
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,13 +16,14 @@
 
 #pragma once
 
-/* LED Indicators */
-#define LED_WIN_LOCK_PIN C11
+/* Use 6 dynamic keymap layers */
+#define DYNAMIC_KEYMAP_LAYER_COUNT 6
 
-/* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
-#define LOCKING_SUPPORT_ENABLE
-/* Locking resynchronize hack */
-#define LOCKING_RESYNC_ENABLE
+/*encoder resolution */
+#define ENCODER_DEFAULT_POS 0x3
+/* LED Indicators */
+#define LED_MAC_OS_PIN      C10
+#define LED_WIN_LOCK_PIN    C11
 
 /* SPI Config for spi flash*/
 #define SPI_DRIVER SPIDQ
@@ -36,8 +37,5 @@
 /* I2C Config for LED Driver */
 #define SNLED27351_I2C_ADDRESS_1 SNLED27351_I2C_ADDRESS_GND
 #define SNLED27351_I2C_ADDRESS_2 SNLED27351_I2C_ADDRESS_VDDIO
-#define I2C1_SCL_PAL_MODE 4
 #define I2C1_OPMODE OPMODE_I2C
 #define I2C1_CLOCK_SPEED 400000 /* 400000 */
-
-#define RGB_TRIGGER_ON_KEYDOWN
