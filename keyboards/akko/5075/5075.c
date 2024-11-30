@@ -143,6 +143,8 @@ const snled27351_led_t PROGMEM g_snled27351_leds[SNLED27351_LED_COUNT] = {
 };
 
 #endif
+
+#if 0
 // clang-format on
 void keyboard_pre_init_kb(void) {
     // set our LED pings as output
@@ -176,3 +178,4 @@ bool dip_switch_update_kb(uint8_t index, bool active) {
     }
     return true;
 }
+#endif
