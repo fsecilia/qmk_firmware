@@ -11,12 +11,31 @@
     },
     "features": {
         "bootmagic": true,
-        "console": true,
+        "caps_word": true,
+        "command": false,
+        "console": false,
         "encoder": true,
         "extrakey": true,
-        "mousekey": true,
+        "mousekey": false,
         "nkro": true,
+        "repeat_key": true,
         "rgb_matrix": true
+    },
+    "build": {
+        "debounce_type": "sym_eager_pk",
+        "lto": true
+    },
+    "debounce": 15,
+    "dynamic_keymap": {
+        "layer_count": 5
+    },
+    "caps_word": {
+        "double_tap_shift_turns_on": true,
+        "enabled": true
+    },
+    "tapping": {
+        "hold_on_other_key_press": true,
+        "permissive_hold": true
     },
     "matrix_pins": {
         "cols": ["B0", "B2", "B10", "B11", "B12", "B13", "B14", "B15", "A14", "B3", "A15", "B5", "B6", "B7", "C13"],
@@ -25,29 +44,18 @@
     "processor": "STM32F103",
     "rgb_matrix": {
         "animations": {
-            "band_pinwheel_sat": true,
-            "band_pinwheel_val": true,
+            "all_off": true,
+            "solid_color": true,
             "band_sat": true,
-            "band_spiral_sat": true,
-            "band_spiral_val": true,
-            "band_val": true,
             "breathing": true,
             "cycle_all": true,
             "cycle_left_right": true,
-            "cycle_out_in": true,
-            "cycle_out_in_dual": true,
-            "cycle_pinwheel": true,
-            "cycle_spiral": true,
-            "cycle_up_down": true,
-            "dual_beacon": true,
+            "rainbow_moving_chevron": true,
             "gradient_left_right": true,
-            "gradient_up_down": true,
             "hue_breathing": true,
             "hue_pendulum": true,
             "hue_wave": true,
-            "rainbow_beacon": true,
-            "rainbow_moving_chevron": true,
-            "rainbow_pinwheels": true
+            "typing_heatmap": true
         },
         "driver": "ws2812",
         "layout": [
