@@ -22,8 +22,8 @@
 /*encoder resolution */
 #define ENCODER_DEFAULT_POS 0x3
 /* LED Indicators */
-#define LED_MAC_OS_PIN      C10
-#define LED_WIN_LOCK_PIN    C11
+#define LED_MAC_OS_PIN C10
+#define LED_WIN_LOCK_PIN C11
 
 /* SPI Config for spi flash*/
 #define SPI_DRIVER SPIDQ
