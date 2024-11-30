@@ -16,6 +16,7 @@ static uint8_t sc_ble_leds(void) {
 }
 
 static void sc_ble_mouse(report_mouse_t *report) {
+#if defined MOUSE_ENABLE
     static uint8_t last_report[sizeof(report_mouse_t)] = {0};
 
     if (!has_mouse_report_changed((report_mouse_t *)last_report, report)) return;
@@ -23,6 +24,7 @@ static void sc_ble_mouse(report_mouse_t *report) {
     uart_write(0x55);
     uart_write(sizeof(report_mouse_t));
     uart_transmit(last_report, sizeof(report_mouse_t));
+#endif
 }
 
 static void sc_ble_extra(report_extra_t *report) {
