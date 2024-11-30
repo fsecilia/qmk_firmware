@@ -11,15 +11,6 @@
             "backing_size": 8192
         }
     },
-    "qmk": {
-        "locking": {
-            "enabled": true,
-            "resync": true
-        }
-    },
-    "dip_switch": {
-        "pins": ["A9"]
-    },
     "encoder": {
         "rotary": [
             {"pin_a": "B14", "pin_b": "B13"}
@@ -29,7 +20,6 @@
         "bootmagic": true,
         "command": false,
         "console": false,
-        "dip_switch": true,
         "encoder": true,
         "extrakey": true,
         "mousekey": true,
