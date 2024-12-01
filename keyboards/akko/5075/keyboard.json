@@ -58,6 +58,7 @@
     "processor": "WB32FQ95",
     "rgb_matrix": {
         "animations": {
+            "solid_color": true,
             "breathing": true,
             "cycle_all": true,
             "cycle_left_right": true,
