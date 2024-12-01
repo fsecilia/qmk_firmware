@@ -135,6 +135,7 @@
             {"matrix": [0, 13], "x": 202, "y": 0, "flags": 4}
         ],
         "sat_steps": 64,
+        "sleep": true,
         "speed_steps": 64,
         "val_steps": 64
     },
