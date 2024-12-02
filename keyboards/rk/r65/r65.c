@@ -1,9 +1,10 @@
-//#include "quantum.h"
+// #include "quantum.h"
 
 #include QMK_KEYBOARD_H
 
 #define LED_ENABLE_PIN A5
 
+#if 0
 void keyboard_pre_init_kb(void) {
     gpio_set_pin_output(LED_ENABLE_PIN);
     gpio_write_pin_high(LED_ENABLE_PIN);
@@ -26,3 +27,4 @@ void housekeeping_task_kb(void){
         gpio_write_pin_high(LED_WIN_LOCK_PIN);
     }
 }
+#endif
