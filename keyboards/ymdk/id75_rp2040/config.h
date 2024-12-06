@@ -29,7 +29,7 @@
 // apply the patches, and then uncomment the line below as well as the ones
 // in rules.mk.
 //
-#    define BACKLIGHT_PIN rgb_matrix
+// #define BACKLIGHT_PIN rgb_matrix
 #    define DRIVER_LED_TOTAL 89
 #    define RGB_MATRIX_LED_COUNT 89
 

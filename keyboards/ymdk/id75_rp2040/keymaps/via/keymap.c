@@ -96,7 +96,7 @@ bool rgb_matrix_indicators_user(void) {
 #endif
 
 // Code used to lower the brightness of the indicator LEDs (Snowflake LEDs)
-#if defined(RGB_MATRIX_ENABLE)
+#if 0 && defined(RGB_MATRIX_ENABLE)
 
 #define INDICATOR_RGB_DIVISOR 4
 extern LED_TYPE rgb_matrix_ws2812_array[DRIVER_LED_TOTAL];
