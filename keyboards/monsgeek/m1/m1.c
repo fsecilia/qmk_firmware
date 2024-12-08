@@ -141,6 +141,7 @@ const snled27351_led_t PROGMEM g_snled27351_leds[SNLED27351_LED_COUNT] = {
     {1, CB10_CA11,  CB11_CA11,  CB12_CA11},
 };
 
+#if 0
 // clang-format on
 bool rgb_matrix_indicators_advanced_kb(uint8_t led_min, uint8_t led_max) {
     if (!rgb_matrix_indicators_advanced_user(led_min, led_max)) {
@@ -214,3 +215,4 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
             return true;
     }
 }
+#endif
