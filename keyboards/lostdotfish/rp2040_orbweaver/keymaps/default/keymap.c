@@ -37,7 +37,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
 //Second example keymap with all modifier keys replaced with numbers or letters
-     
+
    [_LETTERS] = LAYOUT(
         KC_0, KC_1, KC_2, KC_3, KC_4,
         KC_I, KC_Q, KC_W, KC_E, KC_R,
@@ -55,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_K, KC_Z, KC_X, KC_C, TO(0),
         KC_L, KC_UP, KC_DOWN, KC_RIGHT, KC_LEFT,
         KC_SPACE
-    ) 
+    )
 
 };
 
@@ -76,6 +76,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     }
     return state;
 }
+
 void suspend_power_down_kb(void) {
     // code will run multiple times while keyboard is suspended
     gpio_write_pin_high(GP23);
