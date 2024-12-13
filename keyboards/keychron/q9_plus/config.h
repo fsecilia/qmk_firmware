@@ -20,7 +20,10 @@
 #define MATRIX_MASKED
 
 /* DIP switch */
-#define DIP_SWITCH_MATRIX_GRID {{ 3, 4 }}
+#define DIP_SWITCH_MATRIX_GRID \
+    {                          \
+        { 3, 4 }               \
+    }
 
 /* RGB Matrix Driver Configuration */
 #define DRIVER_COUNT 1
@@ -34,8 +37,7 @@
 #define I2C1_TIMINGR_SCLL 51U
 
 /* Set LED driver current */
-#define CKLED2001_CURRENT_TUNE \
-    { 0xF8, 0xF8, 0x70, 0xF8, 0xF8, 0x70, 0xF8, 0xF8, 0x70, 0xF8, 0xF8, 0x70 }
+#define CKLED2001_CURRENT_TUNE {0xF8, 0xF8, 0x70, 0xF8, 0xF8, 0x70, 0xF8, 0xF8, 0x70, 0xF8, 0xF8, 0x70}
 
 /* turn off effects when suspended */
 #define RGB_DISABLE_WHEN_USB_SUSPENDED
@@ -49,6 +51,3 @@
 // https://docs.qmk.fm/#/feature_rgb_matrix?id=rgb-matrix-effects
 #define RGB_MATRIX_FRAMEBUFFER_EFFECTS
 #define RGB_MATRIX_KEYPRESSES
-
-/* Old default behavior of mod-taps */
-#define HOLD_ON_OTHER_KEY_PRESS
