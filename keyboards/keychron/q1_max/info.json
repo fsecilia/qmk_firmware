@@ -6,19 +6,44 @@
     "processor": "STM32F401",
     "bootloader": "stm32-dfu",
     "usb": {
+        "force_nkro": true,
         "vid": "0x3434"
     },
     "features": {
         "bootmagic": true,
-        "extrakey" : true,
-        "mousekey" : true,
-        "dip_switch" : true,
-        "encoder": true,
+        "caps_word": true,
+        "command": false,
+        "console": false,
+        "dip_switch": true,
         "encoder_map": true,
-        "nkro" : true,
+        "encoder": true,
+        "extrakey": true,
+        "mousekey": false,
+        "nkro": true,
+        "raw": true,
+        "repeat_key": true,
         "rgb_matrix": true,
-        "raw" : true,
-        "send_string" : true
+        "send_string": true
+    },
+    "build": {
+        "debounce_type": "sym_eager_pk",
+        "lto": true
+    },
+    "debounce": 20,
+    "dynamic_keymap": {
+        "layer_count": 6
+    },
+    "caps_word": {
+        "double_tap_shift_turns_on": true,
+        "enabled": true
+    },
+    "oneshot": {
+        "tap_toggle": 0
+    },
+    "tapping": {
+        "hold_on_other_key_press": true,
+        "permissive_hold": true,
+        "toggle": 0
     },
     "matrix_pins": {
         "cols": ["C7", "C8", "A14", "A15", "C10", "C11", "C13", "C14", "C15", "C0", "C1", "C2", "C3", "A0", "A1"],
@@ -69,9 +94,5 @@
             "logical_size": 2048,
             "backing_size": 4096
         }
-    },
-    "build": {
-        "debounce_type": "sym_eager_pk"
-    },
-    "debounce": 20
+    }
 }
