@@ -46,9 +46,9 @@ all: {keyboard_safe}_{keymap_name}_binary
 	+@$(MAKE) -C "{QMK_FIRMWARE}" -f "{QMK_FIRMWARE}/builddefs/build_keyboard.mk" KEYBOARD="{keyboard_name}" KEYMAP="{keymap_name}" COLOR=true SILENT=false {' '.join(env)} \\
 		>>"{build_log}" 2>&1 \\
 		|| cp "{build_log}" "{failed_log}"
-	@{{ grep '\[ERRORS\]' "{build_log}" >/dev/null 2>&1 && printf "Build %-64s \e[1;31m[ERRORS]\e[0m\\n" "{keyboard_name}:{keymap_name}" ; }} \\
-		|| {{ grep '\[WARNINGS\]' "{build_log}" >/dev/null 2>&1 && printf "Build %-64s \e[1;33m[WARNINGS]\e[0m\\n" "{keyboard_name}:{keymap_name}" ; }} \\
-		|| printf "Build %-64s \e[1;32m[OK]\e[0m\\n" "{keyboard_name}:{keymap_name}"
+	@{{ grep 'ERRORS' "{build_log}" >/dev/null 2>&1 && printf "Build %-64s [1;31m[ERRORS][0m\\n" "{keyboard_name}:{keymap_name}" ; }} \\
+		|| {{ grep 'WARNINGS' "{build_log}" >/dev/null 2>&1 && printf "Build %-64s [1;33m[WARNINGS][0m\\n" "{keyboard_name}:{keymap_name}" ; }} \\
+		|| printf "Build %-64s [1;32m[OK][0m\\n" "{keyboard_name}:{keymap_name}"
 	@rm -f "{build_log}" || true
 """# noqa
                 )
