@@ -95,18 +95,9 @@ bool rgb_matrix_indicators_advanced_kb(uint8_t led_min, uint8_t led_max) {
 
     return false;
 }
-
-void suspend_power_down_kb(void) {
-    gpio_write_pin_low(IS31FL3743A_SDB_PIN);
-    suspend_power_down_user();
-}
-
-void suspend_wakeup_init_kb(void) {
-    gpio_write_pin_high(IS31FL3743A_SDB_PIN);
-    suspend_wakeup_init_user();
-}
 #endif
 
+#if false
 bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
     if (!process_record_user(keycode, record)) {
         return false;
@@ -129,7 +120,79 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
 #    endif
     }
 
-    return true;
+    if (host_keyboard_led_state().caps_lock) {
+        RGB_MATRIX_INDICATOR_SET_COLOR(CAPS_LOCK_INDEX, 255, 255, 255);
+    } else {
+        if (!rgb_matrix_get_flags()) {
+            RGB_MATRIX_INDICATOR_SET_COLOR(CAPS_LOCK_INDEX, 0, 0, 0);
+        }
+    }
+
+    switch (get_highest_layer(layer_state)) {
+      case 0:{
+        if (L_WIN) {
+            RGB_MATRIX_INDICATOR_SET_COLOR(WIN_MOD_INDEX, 255, 255, 255);
+            if (!rgb_matrix_get_flags()) {
+               RGB_MATRIX_INDICATOR_SET_COLOR(MAC_MOD_INDEX, 0, 0, 0);
+            }
+            }else{
+                if (!rgb_matrix_get_flags()) {
+                   RGB_MATRIX_INDICATOR_SET_COLOR(WIN_MOD_INDEX, 0, 0, 0);
+                 }
+              }
+         } break;
+
+      case 1:{
+         if (L_MAC) {
+            RGB_MATRIX_INDICATOR_SET_COLOR(MAC_MOD_INDEX, 255, 255, 255);
+            if (!rgb_matrix_get_flags()) {
+               RGB_MATRIX_INDICATOR_SET_COLOR(WIN_MOD_INDEX, 0, 0, 0);
+            }
+            }else{
+                if (!rgb_matrix_get_flags()) {
+                   RGB_MATRIX_INDICATOR_SET_COLOR(MAC_MOD_INDEX, 0, 0, 0);
+                 }
+              }
+         } break;
+
+
+      case 2:{
+       RGB_MATRIX_INDICATOR_SET_COLOR(WIN_MOD_INDEX, 255, 255, 255);
+        if (!rgb_matrix_get_flags()) {
+            RGB_MATRIX_INDICATOR_SET_COLOR(MAC_MOD_INDEX, 0, 0, 0);
+         }
+      } break;
+
+      case 3:{
+       RGB_MATRIX_INDICATOR_SET_COLOR(MAC_MOD_INDEX, 255, 255, 255);
+        if (!rgb_matrix_get_flags()) {
+            RGB_MATRIX_INDICATOR_SET_COLOR(WIN_MOD_INDEX, 0, 0, 0);
+         }
+      } break;
+
+      default:{
+        if (!rgb_matrix_get_flags()) {
+            RGB_MATRIX_INDICATOR_SET_COLOR(WIN_MOD_INDEX, 0, 0, 0);
+            RGB_MATRIX_INDICATOR_SET_COLOR(MAC_MOD_INDEX, 0, 0, 0);
+        }
+      }
+    }
+    return false;
+}
+#endif
+
+void suspend_power_down_kb() {
+#    ifdef RGB_MATRIX_ENABLE
+    gpio_write_pin_low(IS31FL3743A_SDB_PIN);
+#    endif
+     suspend_power_down_user();
+}
+
+void suspend_wakeup_init_kb() {
+#    ifdef RGB_MATRIX_ENABLE
+    gpio_write_pin_high(IS31FL3743A_SDB_PIN);
+#    endif
+     suspend_wakeup_init_user();
 }
 
 void board_init(void) {
