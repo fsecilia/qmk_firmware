@@ -1,2 +1,3 @@
 RGBLIGHT_SUPPORTED = no
 AUDIO_SUPPORTED = no
+USER_NAME := fsecilia
