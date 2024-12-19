@@ -27,7 +27,7 @@
         "debounce_type": "sym_eager_pk",
         "lto": true
     },
-    "debounce": 15,
+    "debounce": 20,
     "dynamic_keymap": {
         "layer_count": 6
     },
