@@ -14,7 +14,7 @@
         "caps_word": true,
         "command": false,
         "console": false,
-        "encoder": false,
+        "encoder": true,
         "extrakey": true,
         "mousekey": false,
         "nkro": true,
