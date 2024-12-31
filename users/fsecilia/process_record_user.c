@@ -1,4 +1,22 @@
 #include "process_record_user.h"
+#include "lib/getreuer/features/socd_cleaner.h"
+
+bool process_record_socd(uint16_t keycode, keyrecord_t *record) {
+    static socd_cleaner_t cleaners[] = {
+        /* wasd */
+        {{KC_W, KC_S}, SOCD_CLEANER_LAST},
+        {{KC_A, KC_D}, SOCD_CLEANER_LAST},
+    };
+    static int num_cleaners = sizeof(cleaners) / sizeof(*cleaners);
+
+    for (int cleaner = 0; cleaner < num_cleaners; ++cleaner) {
+        if (!process_socd_cleaner(keycode, record, &cleaners[cleaner])) {
+            return false;
+        }
+    }
+
+    return true;
+}
 
 bool process_record_layer_tap(uint16_t keycode, keyrecord_t *record) {
     bool is_tap = (keycode & QK_LAYER_TAP) && record->event.pressed && record->tap.count;
@@ -17,6 +35,10 @@ bool process_record_layer_tap(uint16_t keycode, keyrecord_t *record) {
 
 bool process_record_fsecilia(uint16_t keycode, keyrecord_t *record) {
     if (!process_record_layer_tap(keycode, record)) {
+        return false;
+    }
+
+    if (!process_record_socd(keycode, record)) {
         return false;
     }
 
