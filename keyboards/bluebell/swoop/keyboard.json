@@ -6,21 +6,47 @@
   "usb": {
     "vid": "0x1804",
     "pid": "0x3046",
-    "device_version": "1.0.0"
+    "device_version": "1.0.0",
+    "force_nkro": true
   },
   "features": {
     "bootmagic": true,
-    "mousekey": true,
+    "caps_word": true,
+    "command": false,
+    "console": false,
     "extrakey": true,
+    "mousekey": false,
+    "nkro": true,
+    "repeat_key": true,
     "rgblight": true
+  },
+  "build": {
+    "debounce_type": "sym_eager_pk",
+    "lto": true
+  },
+  "debounce": 20,
+  "dynamic_keymap": {
+    "layer_count": 6
+  },
+  "caps_word": {
+    "double_tap_shift_turns_on": true,
+    "enabled": true
+  },
+  "oneshot": {
+    "tap_toggle": 0
+  },
+  "tapping": {
+    "hold_on_other_key_press": true,
+    "permissive_hold": true,
+    "toggle": 0
   },
   "ws2812": {
     "pin": "D3"
   },
   "rgblight": {
-    "hue_steps": 10,
+    "max_brightness": 200,
+    "hue_steps": 20,
     "led_count": 36,
-    "max_brightness": 150,
     "sleep": true,
     "split_count": [18, 18],
     "animations": {
