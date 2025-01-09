@@ -9,6 +9,10 @@ bool process_record_socd(uint16_t keycode, keyrecord_t *record) {
     };
     static int num_cleaners = sizeof(cleaners) / sizeof(*cleaners);
 
+    /* only apply socd on topmost layer */
+    bool on_top_layer = dynamic_keymap_get_layer_count() == layer_switch_get_layer(record->event.key) + 1;
+    if (!on_top_layer) return true;
+
     for (int cleaner = 0; cleaner < num_cleaners; ++cleaner) {
         if (!process_socd_cleaner(keycode, record, &cleaners[cleaner])) {
             return false;
