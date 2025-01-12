@@ -9,15 +9,17 @@
 
 __attribute__((weak)) bool process_record_socd(uint16_t keycode, keyrecord_t *record) {
     static socd_cleaner_t cleaners[] = {
+
         #if defined socd_enable_wasd
-        {{KC_W, KC_S}, SOCD_CLEANER_LAST},
-        {{KC_A, KC_D}, SOCD_CLEANER_LAST},
+            {{KC_W, KC_S}, SOCD_CLEANER_LAST},
+            {{KC_A, KC_D}, SOCD_CLEANER_LAST},
         #endif
 
         #if defined socd_enable_sdfv
-        {{KC_S, KC_F}, SOCD_CLEANER_LAST},
-        {{KC_D, KC_V}, SOCD_CLEANER_LAST},
+            {{KC_S, KC_F}, SOCD_CLEANER_LAST},
+            {{KC_D, KC_V}, SOCD_CLEANER_LAST},
         #endif
+
     };
     static int num_cleaners = sizeof(cleaners) / sizeof(*cleaners);
 
