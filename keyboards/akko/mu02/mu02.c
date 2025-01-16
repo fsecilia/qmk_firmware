@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include QMK_KEYBOARD_H
+#include "users/fsecilia/process_record_user.h"
 #include "wls/wls.h"
 #include "rgb_record/rgb_record.h"
 
@@ -346,6 +347,7 @@ bool process_record_wls(uint16_t keycode, keyrecord_t *record) {
 #endif
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    if (!process_record_fsecilia(keycode, record)) return false;
 
     if (test_white_light_flag && record->event.pressed) {
         test_white_light_flag = false;
@@ -927,6 +929,7 @@ void housekeeping_task_user(void) { // loop
         hs_ct_time = 0;
     }
 
+#if 0
     if ((readPin(SYSTEM_WIN_PIN) != 0) && (readPin(SYSTEM_MAC_PIN) == 0)) { // mac system
         system_usb = true;
         if (!keymap_is_mac_system()) {
@@ -950,6 +953,7 @@ void housekeeping_task_user(void) { // loop
         }
         system_usb = false;
     }
+#endif
 }
 
 #ifdef RGB_MATRIX_ENABLE
