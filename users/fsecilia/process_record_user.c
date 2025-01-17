@@ -1,11 +1,27 @@
 #include "process_record_user.h"
 #include "lib/getreuer/features/socd_cleaner.h"
 
+#define SOCD
+/* #define SOCD_WASD */
+#define SOCD_SDFV
+
 bool process_record_socd(uint16_t keycode, keyrecord_t *record) {
+#if !defined SOCD || !(defined SOCD_WASD || defined SOCD_SDFV)
+    return true;
+#else
+
     static socd_cleaner_t cleaners[] = {
-        /* wasd */
+
+#if defined SOCD_WASD
         {{KC_W, KC_S}, SOCD_CLEANER_LAST},
         {{KC_A, KC_D}, SOCD_CLEANER_LAST},
+#endif
+
+#if defined SOCD_SDFV
+        {{KC_S, KC_F}, SOCD_CLEANER_LAST},
+        {{KC_D, KC_V}, SOCD_CLEANER_LAST},
+#endif
+
     };
     static int num_cleaners = sizeof(cleaners) / sizeof(*cleaners);
 
@@ -20,6 +36,7 @@ bool process_record_socd(uint16_t keycode, keyrecord_t *record) {
     }
 
     return true;
+#endif
 }
 
 bool process_record_layer_tap(uint16_t keycode, keyrecord_t *record) {
@@ -49,7 +66,7 @@ bool process_record_fsecilia(uint16_t keycode, keyrecord_t *record) {
     return true;
 }
 
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+__attribute__((weak)) bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (!process_record_fsecilia(keycode, record)) {
         return false;
     }
