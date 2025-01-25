@@ -13,7 +13,7 @@ LAYOUT(
 };
 
 #ifdef ENCODER_MAP_ENABLE
-const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
+const uint16_t PROGMEM encoder_map[DYNAMIC_KEYMAP_LAYER_COUNT][NUM_ENCODERS][NUM_DIRECTIONS] = {
     {ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
     {ENCODER_CCW_CW(_______, _______)},
     {ENCODER_CCW_CW(_______, _______)},
