@@ -6,7 +6,23 @@
     "bootmagic": {
         "matrix": [0, 0]
     },
-    "debounce": 1,
+    "build": {
+        "debounce_type": "sym_eager_pk",
+        "lto": true
+    },
+    "debounce": 20,
+    "caps_word": {
+        "double_tap_shift_turns_on": true,
+        "enabled": true
+    },
+    "oneshot": {
+        "tap_toggle": 0
+    },
+    "tapping": {
+        "hold_on_other_key_press": true,
+        "permissive_hold": true,
+        "toggle": 0
+    },
     "diode_direction": "ROW2COL",
     "eeprom": {
         "driver": "wear_leveling",
@@ -21,15 +37,18 @@
         ]
     },
     "features": {
-        "command": false,
-        "console": false,
-        "extrakey": true,
-        "mousekey": true,
-        "nkro": true,
         "rgb_matrix": true,
         "deferred_exec": true,
         "rgblight": false,
-        "encoder": true
+        "encoder": true,
+        "bootmagic": true,
+        "caps_word": true,
+        "command": false,
+        "console": false,
+        "extrakey": true,
+        "mousekey": false,
+        "nkro": true,
+        "repeat_key": true
     },
     "keycodes": [
         {
@@ -135,7 +154,7 @@
         },
         "driver": "ws2812",
         "layout": [
-            {"matrix": [5, 9], "x": 64, "y": 144, "flags": 4}, 
+            {"matrix": [5, 9], "x": 64, "y": 144, "flags": 4},
             {"matrix": [5, 10], "x": 64, "y": 160, "flags": 4},
             {"matrix": [5, 11], "x": 64, "y": 176, "flags": 4},
             {"matrix": [5, 12], "x": 64, "y": 192, "flags": 4},
