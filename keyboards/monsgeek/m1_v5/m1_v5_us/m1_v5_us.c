@@ -580,6 +580,8 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
                 return false;
             }
         } break;
+
+#if 0
         case TO(_BL): {
             if (record->event.pressed) {
                 rgb_matrix_hs_set_remain_time(HS_RGB_BLINK_INDEX_MAC, 0);
@@ -604,6 +606,8 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
 
             return false;
         } break;
+#endif
+
         case RP_P0: {
             if (record->event.pressed) {
                 confinfo.record_channel = 0;
@@ -690,6 +694,8 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
 
             return false;
         } break;
+
+#if 0
         case KC_LCMD: {
             if (keymap_is_mac_system()) {
                 if (keymap_config.no_gui && !rgbrec_is_started()) {
@@ -716,6 +722,8 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
 
             return true;
         } break;
+#endif
+
         case HS_BATQ: {
             extern bool rk_bat_req_flag;
             rk_bat_req_flag = (confinfo.devs != DEVS_USB) && record->event.pressed;
@@ -731,6 +739,7 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
             return false;
         } break;
 
+#if 0
         case KC_A: {
             if (confinfo.dir_flag) {
                 if (record->event.pressed) {
@@ -834,6 +843,8 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
                 return true;
             }
         } break;
+#endif
+
         case HS_CT_A: {
             if (record->event.pressed) {
                 hs_ct_time = timer_read32();
@@ -842,6 +853,8 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
         } break;
+
+#if 0
         case KC_RCTL: {
             if (confinfo.ctrl_app_flag) {
                 if (record->event.pressed) {
@@ -854,6 +867,7 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
                 return true;
             }
         } break;
+
         case HS_SIRI: {
             if (record->event.pressed) {
                 register_code(KC_LCMD);
@@ -876,6 +890,8 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
         } break;
+#endif
+
         default:
             break;
     }
@@ -930,6 +946,7 @@ void housekeeping_task_user(void) { // loop
         hs_ct_time = 0;
     }
 
+#if 0
     if ((readPin(SYSTEM_WIN_PIN) != 0) && (readPin(SYSTEM_MAC_PIN) == 0)) { // mac system
         if (!keymap_is_mac_system()) {
             set_single_persistent_default_layer(_MBL);
@@ -941,6 +958,7 @@ void housekeeping_task_user(void) { // loop
             layer_move(0);
         }
     }
+#endif
 }
 
 #ifdef RGB_MATRIX_ENABLE
@@ -1251,6 +1269,7 @@ bool rgb_matrix_indicators_advanced_kb(uint8_t led_min, uint8_t led_max) {
         ee_clr_timer = 0;
     }
 
+#if 0
     if (host_keyboard_led_state().caps_lock)
         rgb_matrix_set_color(HS_RGB_INDEX_CAPS, 0x20, 0x20, 0x20);
     else
@@ -1259,6 +1278,7 @@ bool rgb_matrix_indicators_advanced_kb(uint8_t led_min, uint8_t led_max) {
         rgb_matrix_set_color(HS_RGB_INDEX_WIN_LOCK, 0x20, 0x20, 0x20);
     else
         rgb_matrix_set_color(HS_RGB_INDEX_WIN_LOCK, RGB_BLACK);
+#endif
 
 #ifdef RGBLIGHT_ENABLE
     if (rgb_matrix_indicators_advanced_rgblight(led_min, led_max) != true) {
