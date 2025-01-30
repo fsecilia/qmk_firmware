@@ -273,19 +273,19 @@ bool rgb_matrix_indicators_kb(void) {
 
     if (enable_bat_indicators) {
         if (bat_full_flag && charging_state) {
-            rgb_matrix_set_color(FN_INDEX, 0, 255, 0);
+            rgb_matrix_set_color(FN_INDEX, 0, 127, 0);
         } else if (charging_state) {
-            rgb_matrix_set_color(FN_INDEX, 250, 250, 250);
+            rgb_matrix_set_color(FN_INDEX, 127, 127, 0);
         } else if (bat_full_flag) {
             // dont show battery level when unplugged and full
         } else {
             // battery low
-            rgb_matrix_set_color(FN_INDEX, 255, 0, 0);
+            rgb_matrix_set_color(FN_INDEX, 127, 0, 0);
         }
     }
 
     if (host_keyboard_led_state().caps_lock) {
-        rgb_matrix_set_color(CAPS_INDEX, 255, 255, 255);
+        rgb_matrix_set_color(CAPS_INDEX, 127, 127, 127);
     }
     return true;
 }
