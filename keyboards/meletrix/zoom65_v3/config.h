@@ -1,5 +1,7 @@
 #pragma once
 
+#include "users/fsecilia/config.h"
+
 /* SPI Config for flash */
 #define SPI_DRIVER SPIDQ
 #define SPI_SCK_PIN B3
