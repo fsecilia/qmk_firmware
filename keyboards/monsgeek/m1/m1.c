@@ -141,7 +141,6 @@ const snled27351_led_t PROGMEM g_snled27351_leds[SNLED27351_LED_COUNT] = {
     {1, CB10_CA11,  CB11_CA11,  CB12_CA11},
 };
 
-#if 0
 // clang-format on
 bool rgb_matrix_indicators_advanced_kb(uint8_t led_min, uint8_t led_max) {
     if (!rgb_matrix_indicators_advanced_user(led_min, led_max)) {
@@ -150,22 +149,12 @@ bool rgb_matrix_indicators_advanced_kb(uint8_t led_min, uint8_t led_max) {
 
     if (host_keyboard_led_state().caps_lock) {
         RGB_MATRIX_INDICATOR_SET_COLOR(44, 255, 255, 255);
-    } else {
-        if (!rgb_matrix_get_flags()) {
-            RGB_MATRIX_INDICATOR_SET_COLOR(44, 0, 0, 0);
-        }
     }
-    if (keymap_config.no_gui) {
-        RGB_MATRIX_INDICATOR_SET_COLOR(75, 255, 255, 255);
-    } else {
-        if (!rgb_matrix_get_flags()) {
-            RGB_MATRIX_INDICATOR_SET_COLOR(75, 0, 0, 0);
-        }
-    }
+
     return true;
 }
-#endif
 
+#if 0
 enum __layers {
     WIN_B,
     WIN_W,
@@ -215,4 +204,5 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
             return true;
     }
 }
+#endif
 #endif
