@@ -16,6 +16,8 @@
 
 #pragma once
 
+#include "users/fsecilia/config.h"
+
 #define ENCODER_DEFAULT_POS 0x3
 
 /* SPI Config for spi flash*/
