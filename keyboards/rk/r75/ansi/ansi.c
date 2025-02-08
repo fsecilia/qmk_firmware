@@ -36,6 +36,7 @@ void suspend_wakeup_init_kb(void) {
     suspend_wakeup_init_user();
 }
 
+#if 0
 void housekeeping_task_kb(void) {
     // Note: The Mac LED should be handled at the user level to provide more flexibility
     // put the code in a function with this signature
@@ -52,3 +53,4 @@ void housekeeping_task_kb(void) {
         gpio_write_pin_high(LED_WIN_LOCK_PIN); // Turn off Win Lock LED
     }
 }
+#endif
