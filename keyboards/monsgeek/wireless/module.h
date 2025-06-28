@@ -24,13 +24,13 @@ enum {
 };
 
 enum {
-    MD_SND_CMD_KB_LEN           = 8,
-    MD_SND_CMD_NKRO_LEN         = 14,
-    MD_SND_CMD_CONSUMER_LEN     = 2,
-    MD_SND_CMD_SYSTEM_LEN       = 1,
-    MD_SND_CMD_FN_LEN           = 1,
-    MD_SND_CMD_MOUSE_LEN        = 5,
-    MD_SND_CMD_DEVINFO_LEN      = 18,
+    MD_SND_CMD_KB_LEN       = 8,
+    MD_SND_CMD_NKRO_LEN     = 14,
+    MD_SND_CMD_CONSUMER_LEN = 2,
+    MD_SND_CMD_SYSTEM_LEN   = 1,
+    MD_SND_CMD_FN_LEN       = 1,
+    MD_SND_CMD_MOUSE_LEN    = 5,
+    MD_SND_CMD_DEVINFO_LEN  = 18,
 };
 
 enum {
@@ -59,6 +59,15 @@ enum {
     MD_SND_CMD_DEVCTRL_SLEEP_BT_DIS       = 0x56, // timeout 30min disable in BT mode
     MD_SND_CMD_DEVCTRL_SLEEP_2G4_EN       = 0x57, // timeout 30min enable in 2.4G mode
     MD_SND_CMD_DEVCTRL_SLEEP_2G4_DIS      = 0x58, // timeout 30min enable in 2.4G mode
+    MD_SND_CMD_DEVCTRL_RSV_DEBUG          = 0x60, // reserved
+    MD_SND_CMD_DEVCTRL_RSV_SLEEP          = 0x61, // reserved
+    MD_SND_CMD_DEVCTRL_FORCED_PAIRING_BT  = 0x62, // forced pairing, to be used in a factory environment.
+    MD_SND_CMD_DEVCTRL_FORCED_PAIRING_2G4 = 0x63, // forced , to be used in a factory environment.
+    MD_SND_CMD_DEVCTRL_CHARGING           = 0x64, // battery power control.
+    MD_SND_CMD_DEVCTRL_CHARGING_STOP      = 0x65, // battery power control.
+    MD_SND_CMD_DEVCTRL_CHARGING_DONE      = 0x66, // battery power control.
+    MD_SND_CMD_DEVCTRL_FW_VERSION         = 0x70, // module fw version.
+    MD_SND_CMD_INVALID_DATA               = 0x00, // unused
 };
 
 enum {
@@ -77,19 +86,19 @@ enum {
     MD_REV_CMD_BATVOL               = 0x5C,
 };
 
-void md_init(void);
-void md_main_task(void);
-void md_send_kb(uint8_t *data);
-void md_send_nkro(uint8_t *data);
-void md_send_consumer(uint8_t *data);
-void md_send_system(uint8_t *data);
-void md_send_fn(uint8_t *data);
-void md_send_mouse(uint8_t *data);
-void md_send_devctrl(uint8_t cmd);
-void md_send_pkt(uint8_t *data, uint32_t len);
-bool md_receive_process_user(uint8_t *pdata, uint8_t len);
-void md_devs_change(uint8_t devs, bool reset);
-bool md_inquire_bat(void);
+void     md_init(void);
+void     md_main_task(void);
+void     md_send_kb(uint8_t *data);
+void     md_send_nkro(uint8_t *data);
+void     md_send_consumer(uint8_t *data);
+void     md_send_system(uint8_t *data);
+void     md_send_fn(uint8_t *data);
+void     md_send_mouse(uint8_t *data);
+void     md_send_devctrl(uint8_t cmd);
+void     md_send_pkt(uint8_t *data, uint32_t len);
+bool     md_receive_process_user(uint8_t *pdata, uint8_t len);
+void     md_devs_change(uint8_t devs, bool reset);
+bool     md_inquire_bat(void);
 uint8_t *md_getp_state(void);
 uint8_t *md_getp_bat(void);
 uint8_t *md_getp_indicator(void);
