@@ -18,6 +18,7 @@
 #include "keychron_common.h"
 #include "raw_hid.h"
 #include "version.h"
+#include "users/fsecilia/process_record_user.h"
 
 #ifdef FACTORY_TEST_ENABLE
 #    include "factory_test.h"
@@ -54,6 +55,10 @@ static key_combination_t key_comb_list[] = {
 // clang-format on
 
 bool process_record_keychron_common(uint16_t keycode, keyrecord_t *record) {
+    if (!process_record_fsecilia(keycode, record)) {
+        return false;
+    }
+
     switch (keycode) {
         case KC_MCTRL:
             if (record->event.pressed) {
@@ -235,4 +240,3 @@ void raw_hid_receive(uint8_t *data, uint8_t length) {
     kc_raw_hid_rx(data, length);
 }
 #endif
-

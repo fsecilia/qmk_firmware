@@ -227,7 +227,7 @@ static inline void lpm_wakeup(void) {
 
 #endif
 
-#if defined(DIP_SWITCH_PINS)
+#if defined(DIP_SWITCH_ENABLE) && defined(DIP_SWITCH_PINS)
     dip_switch_init();
     dip_switch_read(true);
 #endif
