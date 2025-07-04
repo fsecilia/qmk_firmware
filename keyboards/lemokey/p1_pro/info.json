@@ -6,18 +6,39 @@
     "processor": "WB32F3G71",
     "bootloader": "wb32-dfu",
     "usb": {
-        "vid": "0x362D"
+        "vid": "0x362D",
+        "force_nkro": true
     },
     "features": {
         "bootmagic": true,
         "extrakey": true,
-        "mousekey": true,
         "encoder": true,
         "encoder_map": true,
         "nkro": true,
         "rgb_matrix": true,
         "raw": true,
-        "send_string": true
+        "send_string": true,
+
+        "caps_word": true,
+        "command": false,
+        "console": false,
+        "mousekey": false,
+        "repeat_key": true
+    },
+    "dynamic_keymap": {
+        "layer_count": 6
+    },
+    "caps_word": {
+        "double_tap_shift_turns_on": true,
+        "enabled": true
+    },
+    "oneshot": {
+        "tap_toggle": 0
+    },
+    "tapping": {
+        "hold_on_other_key_press": true,
+        "permissive_hold": true,
+        "toggle": 0
     },
     "matrix_pins": {
         "cols": ["C14", "C15", "C2", "C3", "A0", "A1", "A2", "A3", "B10", "B12", "B13", "C7", "C8", "C9", "A10"],
@@ -58,16 +79,19 @@
             "solid_splash": true,
             "splash": true,
             "typing_heatmap": true
-        }
-    },
-    "dynamic_keymap": {
-        "layer_count": 4
+        },
+        "max_brightness": 200,
+        "hue_steps": 20,
+        "sat_steps": 20,
+        "speed_steps": 20,
+        "val_steps": 20
     },
     "eeprom": {
         "driver": "i2c"
     },
     "build": {
-        "debounce_type": "sym_eager_pk"
+        "debounce_type": "sym_eager_pk",
+        "lto": true
     },
     "debounce": 20
 }

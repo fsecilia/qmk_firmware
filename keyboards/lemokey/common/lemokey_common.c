@@ -16,6 +16,7 @@
 
 #include QMK_KEYBOARD_H
 #include "lemokey_common.h"
+#include "users/fsecilia/process_record_user.h"
 
 #ifdef FACTORY_TEST_ENABLE
 #    include "factory_test.h"
@@ -45,6 +46,10 @@ void gui_toggle(void) {
 }
 
 bool process_record_lemokey_common(uint16_t keycode, keyrecord_t *record) {
+    if (!process_record_fsecilia(keycode, record)) {
+        return false;
+    }
+
     switch (keycode) {
         case KC_TASK_VIEW:
         case KC_FILE_EXPLORER:
