@@ -6,18 +6,38 @@
     "processor": "STM32L432",
     "bootloader": "stm32-dfu",
     "usb": {
+        "force_nkro": true,
         "vid": "0x3434"
     },
     "features": {
         "bootmagic": true,
+        "caps_word": true,
         "command": false,
         "console": false,
         "extrakey": true,
-        "mousekey": true,
-        "dip_switch": true,
+        "mousekey": false,
+        "dip_switch": false,
         "encoder": true,
         "nkro": true,
+        "repeat_key": true,
         "rgb_matrix": true
+    },
+    "build": {
+        "debounce_type": "sym_eager_pk",
+        "lto": true
+    },
+    "debounce": 20,
+    "caps_word": {
+        "double_tap_shift_turns_on": true,
+        "enabled": true
+    },
+    "oneshot": {
+        "tap_toggle": 0
+    },
+    "tapping": {
+        "hold_on_other_key_press": true,
+        "permissive_hold": true,
+        "toggle": 0
     },
     "eeprom": {
         "wear_leveling": {
@@ -38,7 +58,7 @@
         ]
     },
     "dynamic_keymap": {
-        "layer_count": 5
+        "layer_count": 6
     },
     "layouts": {
         "LAYOUT_54_ansi": {
@@ -104,6 +124,11 @@
         }
     },
     "rgb_matrix": {
+        "max_brightness": 220,
+        "hue_steps": 64,
+        "sat_steps": 64,
+        "speed_steps": 64,
+        "val_steps": 64,
         "driver": "snled27351",
         "animations": {
             "breathing": true,
