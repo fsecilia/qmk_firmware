@@ -70,6 +70,8 @@
             {"matrix": [4, 5], "x": 95, "y": 64, "flags": 4},
             {"matrix": [4, 10], "x": 151, "y": 64, "flags": 4},
             {"matrix": [4, 11], "x": 170, "y": 64, "flags": 4},
+            {"x": 176, "y": 64, "flags": 2},
+            {"x": 176, "y": 64, "flags": 2},
             {"matrix": [4, 12], "x": 183, "y": 64, "flags": 4},
             {"matrix": [4, 13], "x": 194, "y": 64, "flags": 4},
             {"matrix": [4, 14], "x": 224, "y": 64, "flags": 4},
@@ -133,7 +135,7 @@
             {"matrix": [0, 11], "x": 164, "y": 0, "flags": 4},
             {"matrix": [0, 12], "x": 179, "y": 0, "flags": 4},
             {"matrix": [0, 13], "x": 202, "y": 0, "flags": 4}
-        ],
+         ],
         "max_brightness": 220,
         "sat_steps": 64,
         "sleep": true,
@@ -144,6 +146,7 @@
     "usb": {
         "device_version": "1.0.2",
         "force_nkro": true,
+        "no_startup_check": true,
         "pid": "0x304E",
         "vid": "0x414A"
     },

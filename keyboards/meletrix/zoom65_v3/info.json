@@ -20,9 +20,6 @@
         "double_tap_shift_turns_on": true,
         "enabled": true
     },
-    "oneshot": {
-        "tap_toggle": 0
-    },
     "tapping": {
         "hold_on_other_key_press": true,
         "permissive_hold": true,

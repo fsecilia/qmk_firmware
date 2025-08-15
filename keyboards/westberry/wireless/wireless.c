@@ -18,10 +18,10 @@ static uint8_t wls_devs = DEVS_USB;
 void last_matrix_activity_trigger(void);
 
 uint8_t wireless_keyboard_leds(void);
-void wireless_send_keyboard(report_keyboard_t *report);
-void wireless_send_nkro(report_nkro_t *report);
-void wireless_send_mouse(report_mouse_t *report);
-void wireless_send_extra(report_extra_t *report);
+void    wireless_send_keyboard(report_keyboard_t *report);
+void    wireless_send_nkro(report_nkro_t *report);
+void    wireless_send_mouse(report_mouse_t *report);
+void    wireless_send_extra(report_extra_t *report);
 
 host_driver_t wireless_driver = {
     .keyboard_leds = wireless_keyboard_leds,
@@ -32,13 +32,11 @@ host_driver_t wireless_driver = {
 };
 
 void wireless_init(void) {
-
     md_init();
 }
 
 uint8_t wireless_keyboard_leds(void) __attribute__((weak));
 uint8_t wireless_keyboard_leds(void) {
-
     if (*md_getp_state() == MD_STATE_CONNECTED) {
         return *md_getp_indicator();
     }
@@ -66,8 +64,8 @@ void wireless_send_keyboard(report_keyboard_t *report) {
 
 void wireless_send_nkro(report_nkro_t *report) __attribute__((weak));
 void wireless_send_nkro(report_nkro_t *report) {
-    static report_keyboard_t temp_report_keyboard = {0};
-    uint8_t wls_report_nkro[MD_SND_CMD_NKRO_LEN]  = {0};
+    static report_keyboard_t temp_report_keyboard                 = {0};
+    uint8_t                  wls_report_nkro[MD_SND_CMD_NKRO_LEN] = {0};
 
 #ifdef NKRO_ENABLE
     if (*md_getp_state() != MD_STATE_CONNECTED) {
@@ -77,7 +75,7 @@ void wireless_send_nkro(report_nkro_t *report) {
 
     if (report != NULL) {
         report_nkro_t temp_report_nkro = *report;
-        uint8_t key_count              = 0;
+        uint8_t       key_count        = 0;
 
         temp_report_keyboard.mods = temp_report_nkro.mods;
         for (uint8_t i = 0; i < NKRO_REPORT_BITS; i++) {
@@ -88,13 +86,14 @@ void wireless_send_nkro(report_nkro_t *report) {
         uint8_t nkro_keys = key_count;
         for (uint8_t i = 0; i < WLS_KEYBOARD_REPORT_KEYS && temp_report_keyboard.keys[i]; i++) {
             report_nkro_t found_report_nkro;
-            uint8_t usageid = 0x00;
-            uint8_t n;
+            uint8_t       usageid = 0x00;
+            uint8_t       n;
 
             found_report_nkro = temp_report_nkro;
 
             for (uint8_t c = 0; c < nkro_keys; c++) {
-                for (n = 0; n < NKRO_REPORT_BITS && !found_report_nkro.bits[n]; n++) {}
+                for (n = 0; n < NKRO_REPORT_BITS && !found_report_nkro.bits[n]; n++) {
+                }
                 usageid = (n << 3) | biton(found_report_nkro.bits[n]);
                 del_key_bit(&found_report_nkro, usageid);
                 if (usageid == temp_report_keyboard.keys[i]) {
@@ -120,7 +119,8 @@ void wireless_send_nkro(report_nkro_t *report) {
             uint8_t usageid;
             uint8_t idx, n = 0;
 
-            for (n = 0; n < NKRO_REPORT_BITS && !temp_report_nkro.bits[n]; n++) {}
+            for (n = 0; n < NKRO_REPORT_BITS && !temp_report_nkro.bits[n]; n++) {
+            }
             usageid = (n << 3) | biton(temp_report_nkro.bits[n]);
             del_key_bit(&temp_report_nkro, usageid);
 
@@ -151,10 +151,10 @@ void wireless_send_mouse(report_mouse_t *report) __attribute__((weak));
 void wireless_send_mouse(report_mouse_t *report) {
     typedef struct {
         uint8_t buttons;
-        int8_t x;
-        int8_t y;
-        int8_t z;
-        int8_t h;
+        int8_t  x;
+        int8_t  y;
+        int8_t  z;
+        int8_t  h;
     } __attribute__((packed)) wls_report_mouse_t;
 
     wls_report_mouse_t wls_report_mouse = {0};
@@ -231,8 +231,7 @@ uint8_t wireless_get_current_devs(void) {
     return wls_devs;
 }
 
-bool lpwr_is_allow_timeout_hook(void) {
-
+__attribute__((weak)) bool lpwr_is_allow_timeout_hook(void) {
     if (wls_devs == DEVS_USB) {
         return false;
     }
@@ -247,7 +246,6 @@ void wireless_post_task(void) __attribute__((weak));
 void wireless_post_task(void) {}
 
 void wireless_task(void) {
-
     wireless_pre_task();
     lpwr_task();
     md_main_task();
@@ -270,6 +268,5 @@ void wireless_task(void) {
 }
 
 void housekeeping_task_kb(void) {
-
     wireless_task();
 }
